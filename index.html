@@ -7,20 +7,8 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css"></link>
 	<script type="text/javascript" src="script.js"></script>
-	<link href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet'></link>
 
-	<!--時間軸 js/css, Copyright (c) 2016 eeyellow-->
-	<style>
-	.VivaTimeline dl{position:relative;top:0;padding:20px 0;margin:0}.VivaTimeline dl:before{position:absolute;top:0;bottom:0;left:50%;z-index:1;width:2px;margin-left:-1px;content:'';background-color:#ccd1d9}.VivaTimeline dl dt{position:relative;top:30px;z-index:2;width:120px;padding:3px 5px;margin:0 auto 30px;font-weight:400;color:#fff;text-align:center;background-color:#aab2bd;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px}.VivaTimeline dl dd{position:relative;z-index:2}.VivaTimeline dl dd .circ{position:absolute;top:40px;left:50%;z-index:2;width:22px;height:22px;margin-left:-11px;background-color:#4fc1e9;border:4px solid #f5f7fa;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%}.VivaTimeline dl dd .time{position:absolute;top:31px;left:50%;display:inline-block;width:100px;padding:10px 20px;color:#4fc1e9}.VivaTimeline dl dd .events{position:relative;width:47%;padding:10px 0 0;margin-top:31px;background-color:#CCC;border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px}.VivaTimeline dl dd .events:before{position:absolute;top:12px;width:0;height:0;content:'';border-style:solid;border-width:6px}.VivaTimeline dl dd .events .events-object{margin:0 auto}.VivaTimeline dl dd .events .events-header{min-height:30px;line-height:20px;text-align:center;font-size:16px;font-weight:bold;cursor:pointer}.VivaTimeline dl dd .events .events-body{overflow:hidden;zoom:1;background-color:#EEE;padding:10px}.VivaTimeline dl dd .events .events-body .row{display:none}.VivaTimeline dl dd .events .events-body .events-desc{text-indent:2em;padding:0 15px}.VivaTimeline dl dd .events .events-footer{text-align:center}.VivaTimeline dl dd .events .events-footer ol{list-style:none;margin:0 auto;padding:0}.VivaTimeline dl dd .events .events-footer ol li{background:#32b487;border-radius:5px;margin:10px;display:inline-block;width:10px;height:10px;cursor:pointer}.VivaTimeline dl dd .events .events-footer ol .active{transform:scale(2)}.VivaTimeline dl dd.pos-right .time{margin-left:-100px;text-align:right}.VivaTimeline dl dd.pos-right .events{float:right}.VivaTimeline dl dd.pos-right .events:before{left:-12px;border-color:transparent #CCC transparent transparent}.VivaTimeline dl dd.pos-left .time{margin-left:0;text-align:left}.VivaTimeline dl dd.pos-left .events{float:left}.VivaTimeline dl dd.pos-left .events:before{right:-12px;border-color:transparent transparent transparent #CCC}.VivaTimeline .carousel-indicators{bottom:0}@media screen and (max-width:767px){.VivaTimeline dl:before{left:90px}.VivaTimeline dl dt{margin:0 30px 30px}.VivaTimeline dl dd .circ{left:90px}.VivaTimeline dl dd .time{left:20px}.VivaTimeline dl dd.pos-left .time{padding:10px 0;margin-left:0;text-align:left}.VivaTimeline dl dd.pos-left .events{float:right;width:73%;margin-right:4%}.VivaTimeline dl dd.pos-left .events:before{left:-12px;border-color:transparent #CCC transparent transparent}.VivaTimeline dl dd.pos-right .time{padding:10px 0;margin-left:0;text-align:left}.VivaTimeline dl dd.pos-right .events{float:right;width:73%;margin-right:4%}/* .VivaTimeline dl dd .events .events-body{display:none}.VivaTimeline dl dd .events .events-footer{display:none}*/}
-	@media screen and (max-width:500px){.VivaTimeline dl dd.pos-left .events{float:right;width:63%;margin-right:4%}.VivaTimeline dl dd.pos-right .events{float:right;width:63%;margin-right:4%}}
-	</style>
-	<script>
-	//<![CDATA[
-	(function(e,b,a,f){var d="vivaTimeline";var c=function(h,g){this.target=h;this.carouselInterval;this.checkImgLoad;this.imgLoad=false;this._init(g);this._event()};c.options={carousel:true,carouselTime:10000};c.prototype={_init:function(h){var g=this;g.options=e.extend(true,{},c.options,h);g.target.find(".events-body").each(function(){var l=e(this).find(".row").length;if(l>1){var k="<ol>";for(var j=0;j<l;j++){k+="<li data-target='"+j+"'></li>"}k+="</ol>";e(this).siblings(".events-footer").html(k).find("li").first().addClass("active")}});g.target.find(".events-body").each(function(){e(this).find(".row").first().show().siblings().hide()});g.target.find("img").on("load",function(){g.target.find(".events-body").each(function(){var i=0;e(this).find(".row").each(function(){if(e(this).height()>i){i=e(this).height()}});e(this).find(".row").height(i)})})},_event:function(){var g=this;g.target.find(".events-header").click(function(){e(this).siblings(".events-body").slideToggle().end().siblings(".events-footer").toggle()});g.target.find(".events-footer li").click(function(){g._carousel(e(this))});if(g.options.carousel){g.carouselInterval=setInterval(function(){g._carousel()},g.options.carouselTime);g.target.find(".events").hover(function(){clearInterval(g.carouselInterval);g.carouselInterval=null},function(){if(g.carouselInterval==f){g.carouselInterval=setInterval(function(){g._carousel()},g.options.carouselTime)}})}},_carousel:function(h){var g=this;if(h==f){g.target.find(".events-footer .active").each(function(){var j;if(e(this).is(":last-child")){j=e(this).siblings().first()}else{j=e(this).next()}g._carousel(j)})}else{var i=h.data().target;h.addClass("active").siblings().removeClass("active");h.closest(".events-footer").siblings(".events-body").find(".row").eq(i).show().siblings().hide()}}};e.fn[d]=function(h,g){var i;this.each(function(){i=new c(e(this),h)});return this}})(jQuery,window,document);
-	//]]>
-	</script>
-	<!--時間軸 js/css-->
-	
+
   </head>
   <body>
     <div id="menu-toggle">
@@ -40,106 +28,7 @@
 	
 	
 	
-	<script>
-	//<![CDATA[
-	/*執行時間軸*/
-	$(".VivaTimeline").vivaTimeline();
-	//]]>
-	</script>
 	
-	<div class="VivaTimeline">
-	<dl>
-
-	<!--月份 1-->
-	<dt>Feb 2018</dt>
-
-	<!--左側文章 start-->
-	<dd class="pos-left clearfix">
-	<div class="circ"></div>
-	<div class="time">Feb 20</div><!--填入日期-->
-	<div class="events">
-	<div class="events-header">Blogger 官方免費幫自訂網址升級 HTTPS！</div><!--填入標題-->
-	<div class="events-body">
-	<div class="row">
-	<div class="col-md-6 pull-left">
-	<img class="events-object img-responsive img-rounded" src="https://4.bp.blogspot.com/-wXph1d9tAxM/WokCWJ06S6I/AAAAAAAAWZQ/kJcyc9mbSiIT99OE1yEx426CkET1NeHFgCLcBGAs/s1600/blogger-custom-domain-official-https-upgrade.jpg" /><!--填入圖片網址-->
-	</div>
-	<div class="events-desc">這真的是最好的新年禮物了，過年前夕在「 FB 社團 」 +Vista Cheng 分享了「 Blogger站長看過來：自訂網域的網誌，也可以支援HTTPS囉 」 ，原來官方悄悄開始測試，可以讓自訂網域直接升級 HTTPS，這代表： 不用付錢，Blogger 免費提供我們網...</div><!--填入描述-->
-	</div>
-	</div>
-	<div class="events-footer"><a href="https://www.wfublog.com/2018/02/blogger-custom-domain-official-https-upgrade.html" target="_blank">繼續閱讀</a></div><!--可填底部標題 或刪除-->
-	</div>
-	</dd>
-	<!--左側文章 end-->
-
-	<!--右側文章 start-->
-	<dd class="pos-right clearfix">
-	<div class="circ"></div>
-	<div class="time">Feb 13</div><!--填入日期-->
-	<div class="events">
-	<div class="events-header">究竟 Blogger 會不會關閉？從 Google 商業經營的角度分析</div><!--填入標題-->
-	<div class="events-body">
-	<div class="row">
-	<div class="col-md-6 pull-left">
-	<img class="events-object img-responsive img-rounded" src="https://2.bp.blogspot.com/-MQgmDdWOn5s/WoEcbqEIWPI/AAAAAAAAWXo/h8U_GHIW75obyskVvwgGQlD3ji0gjU7NACLcBGAs/s1600/will-google-close-blogger-business-analysis.jpg" /><!--填入圖片網址-->
-	</div>
-	<div class="events-desc">Blogger 會不會倒閉，是使用者長期以來的擔憂。過去曾在「 Blogger 的未來 」發表過看法，不過曾有讀者看完，一段時間後仍提出相同的問題。我想，這件事除非有官方說詞，否則疑問不會有停止的一天。 然而，Google 官方有可能發佈這樣的聲明嗎？我想不會的，連 Yaho...</div><!--填入描述-->
-	</div>
-	</div>
-	<div class="events-footer"><a href="https://www.wfublog.com/2018/02/blogger-custom-domain-official-https-upgrade.html" target="_blank">繼續閱讀</a></div><!--可填底部標題 或刪除-->
-	</div>
-	</dd>
-	<!--右側文章 end-->
-
-	<!--月份 2-->
-	<dt>Jan 2018</dt>
-
-	<!--左側文章 start-->
-	<dd class="pos-left clearfix">
-	<div class="circ"></div>
-	<div class="time">Jan 30</div><!--填入日期-->
-	<div class="events">
-	<div class="events-header">部落格載入速度太慢，要如何判斷哪些外掛可以移除？</div><!--填入標題-->
-	<div class="events-body">
-	<div class="row">
-	<div class="col-md-6 pull-left">
-	<img class="events-object img-responsive img-rounded" src="https://2.bp.blogspot.com/-kSoFOb5NBBo/Wm-wzn619hI/AAAAAAAAWVw/13tYUepFvuk3zD3XnU25wBixfDuAzC-0wCLcBGAs/s1600/pagespeed-slow-remove-plugin.jpg" /><!--填入圖片網址-->
-	</div>
-	<div class="events-desc">重視 SEO 的站長自然都會關注網頁的載入速度，因為這也是 Google 的排名評分項目之一。過去寫過一系列「 網站效能 」的相關文章，有興趣的站長可以瞭解不同的主題要如何處理。 由於提升「網頁載入速度」的詢問度一直很高，以往就算請讀者看這些相關文章，一段時間後還是可能回頭問...</div><!--填入描述-->
-	</div>
-	</div>
-	<div class="events-footer"><a href="https://www.wfublog.com/2018/01/pagespeed-slow-remove-plugin.html" target="_blank">繼續閱讀</a></div><!--可填底部標題 或刪除-->
-	</div>
-	</dd>
-	<!--左側文章 end-->
-
-	<!--右側文章 start-->
-	<dd class="pos-right clearfix">
-	<div class="circ"></div>
-	<div class="time">Jan 17</div><!--填入日期-->
-	<div class="events">
-	<div class="events-header">從小編到總編之路﹍如何成為部落客中的佼佼者</div><!--填入標題-->
-	<div class="events-body">
-	<div class="row">
-	<div class="col-md-6 pull-left">
-	<img class="events-object img-responsive img-rounded" src="https://3.bp.blogspot.com/-lo1NZ0KVZSU/WRrNvclwESI/AAAAAAAAPjQ/k50YaNha-1YlzwU0qtHwbhBoLfXPll1iACLcB/s780/how-to-become-top-blog-writer.jpg" /><!--填入圖片網址-->
-	</div>
-	<div class="events-desc">前陣子這篇「 部落格從搜尋引擎而來的流量，是不會有感情的﹍找回經營網站的動力 」寫完後，有位美食部落格客戶，同時也算本站長期讀者，問了一些 SEO 問題。其實滿訝異的，既然是忠實讀者，想必知道我希望讀者將注意力放在 SEO 以外的地方。 瞭解她詢問的原因後，覺得這段對話可以看...</div><!--填入描述-->
-	</div>
-	</div>
-	<div class="events-footer"><a href="https://www.wfublog.com/2018/01/how-to-become-top-blog-writer.html" target="_blank">繼續閱讀</a></div><!--可填底部標題 或刪除-->
-	</div>
-	</dd>
-	<!--右側文章 end-->
-
-	<!--月份 3-->
-	<dt>Dec 2017</dt>
-
-	<!--月份 4-->
-	<dt>Nov 2017</dt>
-	</dl>
-	</div>
-	<iframe width="100%" height="800px" src="https://www.arcgis.com/apps/Shortlist/index.html?appid=cf9b8452a003472b9324c7641d6124ea" frameborder="0" scrolling="no"></iframe>
 	
 	
 	
