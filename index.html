@@ -5,17 +5,24 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>記你老母地圖</title>
 	<meta name="author" content="Caesarcheng" />
 	<meta name="description" content="map for 612" />
 	<meta name="keywords"  content="612" />
 	<meta name="Resource-type" content="Document" />
+	<link
+		rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+		crossorigin="anonymous"
+  	/>
 	<link rel="stylesheet" type="text/css" href="./css/style.css" />
 	<link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
 
 	<script src="./js/jquery.min.js"></script>
 	<script src="./js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js'></script> 
+	<script type="text/javascript" src="./js/fastclick.min.js"></script> 
 
 	<script type="text/javascript" src="./js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="./js/script.js"></script>
@@ -31,6 +38,9 @@
 				menu: '#menu',
 				scrollingSpeed: 500
 			});
+
+
+			initSlider();
 		});
 	</script>
 
@@ -58,10 +68,58 @@
 		<iframe src="https://uploads.knightlab.com/storymapjs/b46adfb77ef87c7487d7613611c4af35/test2/index.html" frameborder="0" width="80%" height="100%"></iframe>
 	</div>
 	<div class="section" id="section2">
-			<div class="slide "><h1>Simple Demo</h1></div>
-			<div class="slide active"><img src="img/journal.jpg"></img><h2>Only text</h2></div>
-			<div class="slide"><h1>And text</h1></div>
-			<div class="slide"><h1>And more text</h1></div>
+		<script src="./js/main.js"></script>	
+		
+		<div class="slider">
+			<div class="slide current">
+			  <div class="content">
+				<!-- <img src="img/journal.jpg" height="100%" width="100%"></img> -->
+				<p>
+				  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+				</p>
+			  </div>
+			</div>
+			<div class="slide">
+			  <div class="content">
+				<p>
+				  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
+				  maxime, voluptatibus labore doloremque vero!
+				</p>
+			  </div>
+			</div>
+			<div class="slide">
+			  <div class="content">
+				<p>
+				  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
+				  maxime, voluptatibus labore doloremque vero!
+				</p>
+			  </div>
+			</div>
+			<div class="slide">
+			  <div class="content">
+				<p>
+				  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
+				  maxime, voluptatibus labore doloremque vero!
+				</p>
+			  </div>
+			</div>
+			<div class="slide">
+			  <div class="content">
+				<p>
+				  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
+				  maxime, voluptatibus labore doloremque vero!
+				</p>
+			  </div>
+			</div>
+			<div class="slide">
+			  <div class="content">
+				<p>
+				  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
+				  maxime, voluptatibus labore doloremque vero!
+				</p>
+			  </div>
+			</div>
+	</div>
 	</div>
 	<div class="section" id="section3">
 			<h1>Working On Tablets</h1>
@@ -70,8 +128,8 @@
 				<br /><br /><br /><br /><br /><br />
 			</p>
 	</div>
-	<div class="section " id="section4">
-			<p>Create Beautiful Fullscreen Scrolling Websites</p>
+	<div class="section " id="section4">	
+		
 	</div>
 </div>
 
