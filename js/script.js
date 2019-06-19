@@ -9,3 +9,13 @@ $(document).ready(function () {
 		}
 	});
 });
+
+
+function hideMenu(){
+	if($('#menu').hasClass('open')){
+		$('#menu').removeClass('open');
+		$('#menu-toggle').removeClass('open');
+	}
+}
+
+    

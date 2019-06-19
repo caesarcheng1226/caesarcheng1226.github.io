@@ -1,63 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>記你老母地圖</title>
-	<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css"></link>
-	<script type="text/javascript" src="script.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<title>記你老母地圖</title>
+	<meta name="author" content="Caesarcheng" />
+	<meta name="description" content="map for 612" />
+	<meta name="keywords"  content="612" />
+	<meta name="Resource-type" content="Document" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js'></script> 
+
+	<script type="text/javascript" src="./js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
+	<script type="text/javascript">
+		FastClick.attach(document.body);
+
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['1', '2', '3', '4', '5'],
+				menu: '#menu',
+				scrollingSpeed: 500
+			});
+		});
+	</script>
+
+</head>
+<body>
 
 
-  </head>
-  <body>
-    <div id="menu-toggle">
-		<img src="menu.png" width=20 height=20 alt="Menu"></img>
+<div id="menu-toggle">
+	<img src="img/menu.png" width=20 height=20 alt="Menu"></img>
+</div>
+
+<nav id="menu">
+	<a onclick="hideMenu()" href="#1">首頁</a>
+	<a onclick="hideMenu()" href="#2">地圖</a>
+	<a onclick="hideMenu()" href="#3">圖輯</a>
+	<a onclick="hideMenu()" href="#4">聯絡我們</a>
+	<a onclick="hideMenu()" href="#5">關於我們</a>
+</nav>
+
+
+<div id="fullpage">
+	<div class="section " id="section0">
 	</div>
+	<div class="section" id="section1">
+		<iframe src="https://uploads.knightlab.com/storymapjs/b46adfb77ef87c7487d7613611c4af35/test2/index.html" frameborder="0" width="80%" height="100%"></iframe>
+	</div>
+	<div class="section" id="section2">
+			<div class="slide "><h1>Simple Demo</h1></div>
+			<div class="slide active"><img src="img/journal.jpg"></img><h2>Only text</h2></div>
+			<div class="slide"><h1>And text</h1></div>
+			<div class="slide"><h1>And more text</h1></div>
+	</div>
+	<div class="section" id="section3">
+			<h1>Working On Tablets</h1>
+			<p>
+				Designed to fit to different screen sizes as well as tablet and mobile devices.
+				<br /><br /><br /><br /><br /><br />
+			</p>
+	</div>
+	<div class="section " id="section4">
+			<p>Create Beautiful Fullscreen Scrolling Websites</p>
+	</div>
+</div>
 
-	<nav id="menu">
-		<a href="#">Home</a>
-		<a href="#">About</a>
-		<a href="#">Login</a>
-		<a href="#">A Link</a>
-		<a href="#">Another Link</a>
-	</nav>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="jquery-script-ads"><script type="text/javascript"><!--
-google_ad_client = "ca-pub-2783044520727903";
-/* jQuery_demo */
-google_ad_slot = "2780937993";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>
-    <script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-	
-	
-  </body>
+</body>
 </html>
