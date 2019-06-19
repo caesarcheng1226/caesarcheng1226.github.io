@@ -73,9 +73,9 @@ p{
 .content p{
 	font-size: 1.2em;
 }
-/* .section{
+.section{
 	text-align:center;
-} */
+}
 
 .twitter-share-button{
 	position: fixed;
@@ -213,6 +213,7 @@ p{
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	backgound-size: cover;
+	text-align: left;
 }
 #fullpage #section3{
 	background: url(../img/blank_bg.png);
