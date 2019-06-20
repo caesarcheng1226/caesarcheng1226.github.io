@@ -432,7 +432,8 @@ p{
 	}
 
 	#fullpage #section0{
-		background: url(../img/background2.png);
+		background: url(../img/background2.png) no-repeat
+		center center/cover;
 	}
 
   }
