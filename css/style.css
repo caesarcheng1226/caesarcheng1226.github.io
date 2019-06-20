@@ -431,6 +431,10 @@ p{
 		font-size: 5vw;
 	}
 
+	#fullpage #section0{
+		background: url(../img/background2.png);
+	}
+
   }
   
   
