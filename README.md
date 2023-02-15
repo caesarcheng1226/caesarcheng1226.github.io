@@ -9,3 +9,5 @@ main commit
 12512312312312323 rebase
 merge text
 no merge
+
+I am main
